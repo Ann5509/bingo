@@ -1,0 +1,59 @@
+// font-family
+$font: Microsoft JhengHei, -apple-system, system-ui, BlinkMacSystemFont,
+  "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "PingFang TC", "Hiragino Sans CNS", "Heiti TC", "儷黑 Pro",
+  "LiHei Pro", "Microsoft JhengHei", "微軟正黑體", "Microsoft YaHei New",
+  "Microsoft YaHei", "微软雅黑", "文泉驛正黑", "WenQuanYi Zen Hei", Meiryo,
+  "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-style: Microsoft JhengHei, -apple-system, system-ui, BlinkMacSystemFont,
+  "Lobster", cursive;
+
+$font-family-ui: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans" !default;
+$font-family-sans: "Noto Sans TC", Arial, sans-serif !default;
+$font-family-number: "GFS Didot", serif;
+
+// font-colorvcx
+$shadow: #3a3a3a;
+
+$item: #111c25;
+$itemBorder: #363c44;
+$darkGrey: #3c3c3c;
+$grey: #696969;
+$darkGreen: #104225;
+$green: #165b33;
+$lightGreen: #146b3a;
+$darkYellow: #c18a1f;
+$yellow: #d9ab51;
+$lightYellow: #ffc555;
+$lightRed: #f25d56;
+$red: #cc483f;
+$darkRed: #941f21;
+
+$darkPurple: #471d72;
+$purple: #512980;
+$lightPurple: #603196;
+
+$grey03: #ccc;
+$grey05: #eee;
+
+// BREAKPOINTS
+$screen-xs: 375 !default;
+$screen-sm: 576 !default;
+$screen-md: 768 !default;
+$screen-lg: 992 !default;
+$screen-xl: 1200 !default;
+$screen-xmax: 1440 !default;
+$screen-fullmax: 1920 !default;
+
+$breakpoints: (
+  "xs": $screen-xs * 1px,
+  "sm": $screen-sm * 1px,
+  "md": $screen-md * 1px,
+  "lg": $screen-lg * 1px,
+  "xl": $screen-xl * 1px,
+  "xmax": $screen-xmax * 1px,
+  "fullmax": $screen-fullmax * 1px
+) !default;

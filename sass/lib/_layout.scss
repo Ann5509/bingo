@@ -1,0 +1,277 @@
+%titleStyle {
+  font-family: $font-style;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+%playground {
+  background: rgba(0, 0, 0, 0.42);
+}
+
+// front page
+.setting {
+  &_wrap {
+    position: relative;
+    z-index: 3;
+    padding: 20vh 20px;
+    width: 100%;
+    height: 100%;
+    @extend %playground;
+
+    @include bp-md {
+      margin: 0 30px;
+      padding: 30px 20px;
+      max-width: 500px;
+      border-radius: 4px;
+      height: auto;
+    }
+  }
+
+  &_title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2rem;
+
+    @extend %titleStyle;
+  }
+
+  // form
+  &_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &_label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.7rem;
+  }
+
+  &_input {
+    width: 6rem;
+    text-align: center;
+    padding: 5px 10px;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    color: $grey05;
+    border: 1px solid $itemBorder;
+    background: $item;
+    box-shadow: 0 0 4px 0px $shadow;
+    @include bp-md {
+      padding: 5px 10px 5px 20px;
+    }
+  }
+
+  &_ctrl {
+    text-align: center;
+
+    .btn {
+      width: 80px;
+    }
+  }
+}
+
+// playground page
+.playground {
+  &_wrap {
+    position: relative;
+    z-index: 3;
+    padding: 70px 0px;
+    width: 100%;
+    height: 100%;
+    @extend %playground;
+
+    @include bp-md {
+      padding: 100px 50px 70px;
+      margin: 0 30px;
+      max-width: 1000px;
+      border-radius: 4px;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 90%;
+
+    @include bp-md {
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: auto;
+      flex-wrap: nowrap;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &_title {
+    @extend %titleStyle;
+  }
+
+  &_record {
+    font-family: $font-family-ui;
+
+    @include bp-md {
+      max-width: 60%;
+      flex-basis: 60%;
+      padding: 5px 0px 5px 40px;
+    }
+  }
+
+  &-item {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 3rem;
+    margin: 5px;
+    padding: 9px 0;
+    border: 1px solid $itemBorder;
+    background: $item;
+    box-shadow: 0 0 4px 0px $shadow;
+    color: $grey03;
+    border-radius: 3px;
+    transition: all 0.3s;
+
+    &.clicked {
+      background: $purple;
+      border: 1px solid $darkPurple;
+      color: $grey05;
+      box-shadow: inset 0 0 4px 0px $shadow;
+    }
+  }
+
+  &_ctrl {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    @include bp-md {
+      top: 30px;
+      left: 50px;
+    }
+
+    .btn {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &_startgame {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include bp-md {
+      white-space: nowrap;
+    }
+
+    .btn {
+      width: 100%;
+      margin-bottom: 0.5rem;
+      @include bp-md {
+        width: auto;
+        margin-bottom: 0;
+        margin: 0 5px;
+      }
+    }
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translateY(5px) scale(0.5);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    color: red;
+    transform: translateY(5px) scale(0.5);
+  }
+
+  &-leave-active {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &-move {
+    transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+}
+
+.record {
+  &_player {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid $itemBorder;
+    background: $item;
+    box-shadow: 0 0 4px 0px $shadow;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 1rem;
+    @extend %flexCenter;
+    transition: all 0.3s;
+
+    &.my {
+      background: $yellow;
+    }
+
+    .active & {
+      background: $red;
+    }
+  }
+
+  &_list {
+    display: none;
+    @include bp-md {
+      display: block;
+    }
+  }
+
+  &_item {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  &_number {
+    color: $itemBorder;
+    transition: all 0.3s;
+    font-weight: bold;
+    .active & {
+      color: $grey05;
+    }
+  }
+
+  &_info {
+    @include bp-md {
+      padding-left: 5px;
+      margin-top: 2rem;
+    }
+  }
+
+  &_line {
+    font-family: $font-style;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    span {
+      @extend %titleStyle;
+      padding: 0 0.4em;
+      font-weight: 500;
+      display: inline-block;
+      width: 2.5rem;
+    }
+  }
+
+  &_win {
+    color: $yellow;
+    margin-bottom: 1rem;
+    @extend %titleStyle;
+  }
+}
