@@ -139,3 +139,90 @@ body {
     }
   }
 }
+
+// SVG
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 1s;
+
+  &.loading {
+    z-index: 1000;
+    pointer-events: all;
+    opacity: 1;
+  }
+}
+
+path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+#svg-words-01 {
+  position: absolute;
+  top: percentage(240/568);
+  left: 50%;
+  transform: translateX(-50%);
+  path {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    animation-name: draw01;
+  }
+}
+
+#svg-words-02 {
+  position: absolute;
+  top: percentage(300/568);
+  left: 50%;
+  transform: translateX(-50%);
+
+  path {
+    stroke-dasharray: 245;
+    stroke-dashoffset: 245;
+    animation-name: draw02;
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes draw01 {
+  from {
+    stroke-dashoffset: 245;
+    stroke: #aaa;
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    opacity: 1;
+  }
+}
+
+@keyframes draw02 {
+  from {
+    stroke-dashoffset: 245;
+    stroke: #aaa;
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+    stroke: #fff;
+    opacity: 1;
+  }
+}
