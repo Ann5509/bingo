@@ -276,7 +276,7 @@
                 <button class="btn btn-shuffle" @click="backToPrevStage" v-show="!status.startGame">&lt; Back</button>
                 <span class="playground_title" v-show="status.startGame">Round {{record.round}}</span>
             </div>
-            <div class="playground_container">
+            <div class="playground_container" :class="{start: status.startGame}">
                 <draggable class="playground_bingo" ghost-class="ghost" :options="{disabled: status.startGame}">
                     <transition-group name="playground" tag="div" class="checkerboard">
                         <span v-for="item in settings.checkerBoard" v-bind:key="item" class="playground-item"

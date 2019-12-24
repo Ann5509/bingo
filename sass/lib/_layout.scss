@@ -100,7 +100,14 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 90%;
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+
+    &.start {
+      top: 50%;
+    }
 
     @include bp-md {
       justify-content: flex-start;
@@ -108,6 +115,10 @@
       height: auto;
       flex-wrap: nowrap;
       margin-bottom: 2rem;
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
     }
   }
 
@@ -173,7 +184,7 @@
 
     .btn {
       width: 100%;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
       @include bp-md {
         width: auto;
         margin-bottom: 0;
@@ -249,9 +260,9 @@
   }
 
   &_info {
+    margin-top: 2rem;
     @include bp-md {
       padding-left: 5px;
-      margin-top: 2rem;
     }
   }
 
